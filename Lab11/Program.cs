@@ -7,32 +7,59 @@ namespace Lab11
     {
         static void Main(string[] args)
         {
-            var movies = new Dictionary<string, string>();
-            movies.Add("The Wizard of Oz", "Drama");
-            movies.Add("Toy Story", "Animated");
-            movies.Add("Casablanca", "Drama");
-            movies.Add("The Hunt", "Horror");
-            movies.Add("Despicable Me", "Animated");
-            movies.Add("Spiderman", "Animated");
-            movies.Add("Star Wars", "Scifi");
-            movies.Add("The Lodge", "Horror");
-            movies.Add("King Kong", "Scifi");
-            movies.Add("Us", "Horror");
-
+            var movieList = new List<Movie> {
+            new Movie("The Wizard of Oz", $"{ Category.Drama}"),
+            new Movie("Toy Story", $"{ Category.Animated}"),
+            new Movie("Casablanca",$"{ Category.Drama}"),
+            new Movie("The Hunt", $"{ Category.Horror}"),
+            new Movie("Despicable Me", $"{ Category.Animated}"),
+            new Movie("Spiderman", $"{ Category.Animated}"),
+            new Movie("Star Wars", $"{ Category.Drama}"),
+            new Movie("The Lodge", $"{ Category.Drama}"),
+            new Movie("King Kong",$"{ Category.Animated}"),
+            new Movie("Us",$"{ Category.Horror}"),
+        };
             Console.WriteLine("Welcome to the Movie List Application!");
             Console.WriteLine("There are 10 movies in the list.");
-            Console.WriteLine("What category are yoiu interested in?");
-            string v = Console.ReadLine();
-            string category = v;
+            do
+            {
+                Console.WriteLine("What category are yoiu interested in?");
+                string v = Console.ReadLine();
+                string choice = v;
+                foreach (var Movie in movieList)
+                {
+                    if (Movie.GetCategory() == $"{choice}")
 
+                        Console.WriteLine(Movie.GetTitle());
+                }
+                Console.WriteLine("Do you want to continue? (y/n)");
+
+            }
+
+            while
+            (Console.ReadLine() == "y");
 
             {
-                System.Console.WriteLine(movies);
+                Console.WriteLine("Thank you!");
             }
+
+
         }
-
-
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

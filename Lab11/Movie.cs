@@ -3,17 +3,25 @@
     public class Movie
     {
 
-        private string Title { get; set; }
-        private string Category { get; set; }
+        private string _title;
+        private string _category;
 
         public Movie(string title, string category)
         {
-            Title = title;
-            Category = category;
+            _title = title;
+            _category = category;
         }
 
+        public string GetTitle()
+        {
+            return _title;
 
+        }
 
+        public string GetCategory()
+        {
+            return _category;
+        }
 
 
     }
